@@ -1,0 +1,19 @@
+﻿{
+    "value":  [
+                  {
+                      "id":  2,
+                      "nombre":  "Joaquin",
+                      "email":  "joaco@ejemplo.local",
+                      "telefono":  "098222111",
+                      "creado":  "2025-10-25T21:07:58.945124Z"
+                  },
+                  {
+                      "id":  1,
+                      "nombre":  "Ignacio",
+                      "email":  "nacho@ejemplo.local",
+                      "telefono":  "099111222",
+                      "creado":  "2025-10-25T21:06:28.516849Z"
+                  }
+              ],
+    "Count":  2
+}
