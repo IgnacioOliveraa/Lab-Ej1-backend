@@ -1,58 +1,85 @@
-# Backend - Lab Ejercicio 1
+# 🖥️ Backend — Laboratorio Ejercicio 1
 
-Este proyecto contiene el **backend** de la aplicación de registro de usuarios, desarrollado en **Django**.
+Este proyecto implementa el **backend** de una aplicación CRUD simple con **Django + Django REST Framework**.  
+Permite registrar, listar y gestionar usuarios, sirviendo como API para el frontend.
 
-## Descripción
-- Implementa una API REST para **crear y consultar usuarios**.
-- Cada usuario tiene:
-  - `nombre`  
-  - `email` (único)  
-  - `telefono`  
-  - `creado` (fecha y hora de creación)
+---
 
-- Envía notificaciones cuando se crea un usuario (simulado con función interna).
+## ⚙️ Tecnologías utilizadas
 
-## Dependencias
-- Python 3.x
-- Django 4.x
-- djangorestframework
+- Python 3
+- Django
+- Django REST Framework
+- PostgreSQL (o SQLite por defecto)
 
-Instalación de dependencias:
+---
 
-```bash
+## 🚀 Instrucciones para ejecutar
+
+1. Clonar el repositorio:
+
+   ```bash
+   git clone https://github.com/IgnacioOliveraa/Lab-Ej1-backend.git
+   cd Lab-Ej1-backend
+
+Crear y activar entorno virtual (opcional pero recomendado):
+
+python -m venv venv
+venv\Scripts\activate  # en Windows
+
+Instalar dependencias:
+
 pip install -r requirements.txt
 
-Migraciones y Base de Datos
+Aplicar migraciones y levantar servidor:
 
 python manage.py makemigrations
 python manage.py migrate
-
-Cómo ejecutar
-
 python manage.py runserver
-## corre en .http://127.0.0.1:8000
 
-Endpoints:
+Acceder en el navegador:
 
-GET → lista usuarios/api/users/
+Panel admin → http://127.0.0.1:8000/admin
 
-POST → crear usuario/api/users/
+API usuarios → http://127.0.0.1:8000/api/users/
 
-{
-  "nombre": "Juan",
-  "email": "juan@mail.com",
-  "telefono": "12345678"
-}
-
-Estructura del proyecto
+Estructura principal del proyecto:
 
 backend/
-├── core/
+├── backend/
 ├── users/
-│   ├── migrations/
 │   ├── models.py
-│   ├── views.py
 │   ├── serializers.py
+│   ├── views.py
+│   └── urls.py
 ├── manage.py
-├── requirements.txt
-└── evidencias/
+├── evidencias/
+│   ├── backend_admin_users.png
+│   ├── backend_get_users_after_create.png
+│   ├── backend_get_users_despues.json.png
+│   ├── backend_get_users_inicial.json.png
+│   ├── backend_post_response.json.png
+│   └── requirements.txt
+
+
+Evidencias
+Evidencia	Descripción
+
+	Vista del panel de administración de usuarios
+
+	Lista de usuarios después de crear uno nuevo
+
+	Respuesta JSON luego de insertar datos
+
+	Estado inicial del endpoint de usuarios
+
+	Respuesta del endpoint POST
+📄 requirements.txt
+	Archivo de dependencias utilizadas
+
+Endpoints principales
+
+Método	Endpoint	Descripción
+GET	/api/users/	Lista todos los usuarios
+POST	/api/users/	Crea un nuevo usuario
+GET	/api/users/{id}/	Muestra un usuario específico
