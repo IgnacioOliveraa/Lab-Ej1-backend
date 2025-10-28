@@ -1,27 +1,58 @@
-# LAB Ejercicio 1 – Backend (Django REST API)
+# Backend - Lab Ejercicio 1
 
-## Descripción general
-Este proyecto corresponde al **Ejercicio 1 del Laboratorio de Aplicación en AWS EKS**, donde se desarrolla una API REST con **Django + Django REST Framework** para la gestión de usuarios y el envío simulado de notificaciones por correo.
+Este proyecto contiene el **backend** de la aplicación de registro de usuarios, desarrollado en **Django**.
 
-El backend permite:
-- Crear usuarios (`POST /api/users/`)
-- Listar usuarios (`GET /api/users/`)
-- Simular el envío de un correo al crear un usuario (impreso en consola)
-- Acceder al panel de administración de Django (`/admin/`)
+## Descripción
+- Implementa una API REST para **crear y consultar usuarios**.
+- Cada usuario tiene:
+  - `nombre`  
+  - `email` (único)  
+  - `telefono`  
+  - `creado` (fecha y hora de creación)
 
----
+- Envía notificaciones cuando se crea un usuario (simulado con función interna).
 
-## Tecnologías utilizadas
-- **Python 3.14**
-- **Django 5.2.7**
-- **Django REST Framework 3.16.1**
-- **django-cors-headers 4.9.0**
+## Dependencias
+- Python 3.x
+- Django 4.x
+- djangorestframework
 
----
+Instalación de dependencias:
 
-## Cómo ejecutar el proyecto
-
-###  Clonar o descargar el proyecto
 ```bash
-git clone https://github.com/tuUsuario/Lab-Ej1-backend.git
-cd Lab-Ej1-backend
+pip install -r requirements.txt
+
+Migraciones y Base de Datos
+
+python manage.py makemigrations
+python manage.py migrate
+
+Cómo ejecutar
+
+python manage.py runserver
+## corre en .http://127.0.0.1:8000
+
+Endpoints:
+
+GET → lista usuarios/api/users/
+
+POST → crear usuario/api/users/
+
+{
+  "nombre": "Juan",
+  "email": "juan@mail.com",
+  "telefono": "12345678"
+}
+
+Estructura del proyecto
+
+backend/
+├── core/
+├── users/
+│   ├── migrations/
+│   ├── models.py
+│   ├── views.py
+│   ├── serializers.py
+├── manage.py
+├── requirements.txt
+└── evidencias/
