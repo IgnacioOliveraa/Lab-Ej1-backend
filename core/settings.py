@@ -128,5 +128,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOW_ALL_ORIGINS = True
 
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
-DEFAULT_FROM_EMAIL = "no-reply@miapp.local"
+# Configuración para Gmail (recomendado para pruebas)
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = 'smtp.office365.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+EMAIL_HOST_USER = 'joaquin.bassini@estudiantes.utec.edu.uy'  # Reemplaza con tu email
+EMAIL_HOST_PASSWORD = ''  # Contraseña de aplicación
+DEFAULT_FROM_EMAIL = 'joaquin.bassini@estudiantes.utec.edu.uy'
+
+import ssl
+ssl._create_default_https_context = ssl._create_unverified_context
