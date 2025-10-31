@@ -24,7 +24,7 @@ class UsuarioListCreate(generics.ListCreateAPIView):
         """
         try:
             # URL del servicio de notificaciones (local para desarrollo)
-            notification_url = "http://localhost:5000/notify"
+            notification_url = "http://notification-service:5000/notify"
             
             # Datos para la notificación
             notification_data = {
